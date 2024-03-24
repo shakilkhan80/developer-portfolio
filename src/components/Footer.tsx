@@ -1,12 +1,14 @@
 "use client";
 import Link from "next/link";
+import img from "../assets/wave.svg";
+
 import {
-    FaFacebookF,
-    FaGithubSquare,
-    FaInstagram,
-    FaLinkedinIn,
-    FaRegCopyright,
-    FaTwitter,
+  FaFacebookF,
+  FaGithubSquare,
+  FaInstagram,
+  FaLinkedinIn,
+  FaRegCopyright,
+  FaTwitter,
 } from "react-icons/fa";
 
 const SocialData = [
@@ -39,26 +41,29 @@ const SocialData = [
 
 const Footer = () => {
   return (
-    <div>
-      <h1 className="text-5xl font-bold text-center text-white">Shakil</h1>
-      <div className="flex justify-center items-center gap-5 mt-4 ">
-        {SocialData.map((item, index) => {
-          return (
-            <div key={index} className="">
-              <Link href={item.link}>
-                <p className="bg-[#302e2a] rounded-lg p-3  rotate-45 hover:rotate-0 transition-transform duration-300 text-[#c49b66] hover:text-white hover:bg-[#c3965b]">
-                  <span>
-                    {<item.icon className="-rotate-45" />}
-                  </span>
-                </p>
-              </Link>
-            </div>
-          );
-        })}
+    <div
+      className="relative h-[70vh] place-items-start items-center bg-cover overflow-hidden"
+      style={{ backgroundImage: `url(${img.src})` }}
+    >
+      <div className="absolute  bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <h1 className="text-5xl font-bold text-center text-white">Shakil</h1>
+        <div className="flex justify-center items-center gap-5 mt-4 ">
+          {SocialData.map((item, index) => {
+            return (
+              <div key={index} className="">
+                <Link href={item.link}>
+                  <p className="bg-[#302e2a] rounded-lg p-3  rotate-45 hover:rotate-0 transition-transform duration-300 text-[#c49b66] hover:text-white hover:bg-[#c3965b]">
+                    <span>{<item.icon className="-rotate-45" />}</span>
+                  </p>
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+        <p className="text-center text-white/65 mt-1 text-sm">
+          <FaRegCopyright /> 2023 Developer Portfolio. All Rights Reserved.
+        </p>
       </div>
-      <p className="text-center text-white/65 mt-1 text-sm">
-        <FaRegCopyright /> 2023 Developer Portfolio. All Rights Reserved.
-      </p>
     </div>
   );
 };
