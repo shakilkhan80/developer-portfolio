@@ -33,9 +33,9 @@ const data = [
 const Projects = () => {
   return (
     <section id="projects">
-      <div className="mx-2 md:mx-20 my-20 ">
+      <div className="mx-2 md:mx-20 my-3 md:my-20 ">
         <p className=" font-bold text-center mb-1 text-[#c49b66]">Experience</p>
-        <h1 className="text-3xl font-bold text-center mb-7">
+        <h1 className="text-xl md:text-3xl font-bold text-center mb-7">
           My Working Projects
         </h1>
         <div className=" grid lg:grid-cols-3 grid-cols-1 justify-around items-center gap-2 ">

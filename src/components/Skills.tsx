@@ -45,12 +45,12 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="mx-20 my-20">
+    <section id="skills" className="mx-3 md:mx-20 my-20">
       <p className=" font-bold text-center mb-1 text-[#c49b66]">Skills</p>
-      <h1 className="text-3xl font-bold text-center mb-7">
+      <h1 className="text-xl md:text-3xl font-bold text-center mb-7">
         My Working Languages
       </h1>
-      <div className="flex justify-center items-center gap-4">
+      <div className="grid lg:grid-cols-4 grid-cols-1 justify-center items-center gap-4">
         {data.map(({ name, description, icon }, index) => (
           <div
             key={name}
@@ -63,7 +63,7 @@ const Skills = () => {
               <p
                 className={`p-11 bg-white/10 rounded-3xl  ${
                   hoveredItem === index
-                    ? "transition-transform duration-300  text-white bg-[#c3965b] rotate-0"
+                    ? "transition-transform duration-300  text-white bg-[#c39457] rotate-0"
                     : "rotate-45 transition-transform duration-300 text-[#c49b66] bg-white/10"
                 } `}
               ></p>

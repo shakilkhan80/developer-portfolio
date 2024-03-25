@@ -15,7 +15,7 @@ const MySelf = () => {
   return (
     <section
       id="about"
-      className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-center mx-20 my-20"
+      className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-center mx-3 md:mx-20 my-20"
     >
       <div className="flex justify-center items-center">
         <Image
@@ -26,15 +26,15 @@ const MySelf = () => {
           className="w-[80vh] h-[80vh] object-cover"
         />
       </div>
-      <div>
-        <h1 className="text-xl font-semibold uppercase">
+      <div className="flex md:block flex-col justify-center items-center">
+        <h1 className="text-xl  font-semibold uppercase">
           W&#160;h&#160;o&#160;&#160;&#160;A&#160;m&#160;&#160;&#160;I
         </h1>
         <h3 className="text-4xl w-fit p-2 font-semibold my-4 bg-[#c49b66] text-white">
           Shakil Khan
         </h3>
         <p className="text-white text-xl my-3">Professional Web Designer</p>
-        <p className="text-[#8f8f8f]">
+        <p className="text-[#8f8f8f] text-center md:text-start">
           Passionate and results-driven web developer with one year of
           professional experience dedicated to crafting and maintaining
           intuitive web applications. Demonstrated proficiency in transforming

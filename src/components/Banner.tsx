@@ -40,13 +40,13 @@ const Banner = () => {
   return (
     <section
       id="home"
-      className="relative h-screen place-items-start items-center bg-cover overflow-hidden"
+      className="relative h-[60vh] md:h-screen place-items-start items-center bg-cover overflow-hidden"
       style={{ backgroundImage: `url(${bannerImg.src})` }}
     >
       <div className="text-center mt-52">
-        <h1 className="text-7xl font-medium">Welcome!</h1>
-        <p className="text-4xl font-medium my-4">I am </p>
-        <div className="text-6xl font-medium ">
+        <h1 className="text-3xl md:text-7xl font-medium">Welcome!</h1>
+        <p className="text-xl md:text-4xl font-medium my-4">I am </p>
+        <div className="text-2xl md:text-6xl font-medium ">
           <AnimatePresence>
             <motion.div
               key={showDeveloper ? "developer" : "name"}
@@ -62,7 +62,7 @@ const Banner = () => {
         </div>
       </div>
 
-      <div className="flex gap-6 justify-center items-center mt-4 bg-white/5 rounded-lg px-2 py-1 w-1/5 mx-auto ">
+      <div className="flex gap-6 justify-center items-center mt-4 bg-white/5 rounded-lg px-2 py-1 w-2/3 md:w-1/5 mx-auto ">
         {icons.map((item, index) => (
           <div
             key={index}

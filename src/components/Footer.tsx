@@ -53,7 +53,7 @@ const Footer = () => {
 
   return (
     <div
-      className="relative h-[70vh] place-items-start items-center bg-cover overflow-hidden"
+      className="relative h-[50vh] md:h-[70vh] place-items-start items-center bg-cover overflow-hidden"
       style={{ backgroundImage: `url(${img.src})` }}
     >
       <div className="absolute  bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -68,12 +68,12 @@ const Footer = () => {
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
               >
-                <Link href={item.link}>
+                <Link href={item.link} target="_blank">
                   <div className="relative">
                     <p
                       className={`p-6 bg-white/10 rounded-xl  ${
                         hoveredItem === index
-                          ? "transition-transform duration-300  text-white bg-[#c3965b] rotate-0"
+                          ? "transition-transform duration-300  text-white bg-[#b18a57] rotate-0"
                           : "rotate-45 transition-transform duration-300 text-[#c49b66] bg-white/10"
                       } `}
                     ></p>
