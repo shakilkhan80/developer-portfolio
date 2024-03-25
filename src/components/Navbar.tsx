@@ -10,19 +10,19 @@ const NavList = [
   },
   {
     name: "About",
-    link: "/about",
+    link: "#about",
   },
   {
     name: "Skills",
-    link: "/skills",
+    link: "#skills",
   },
   {
     name: "Projects",
-    link: "/projects",
+    link: "#projects",
   },
   {
     name: "Contact",
-    link: "/contact",
+    link: "#contact",
   },
 ];
 

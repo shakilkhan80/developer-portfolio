@@ -1,6 +1,8 @@
 import Banner from "@/components/Banner";
 import Contact from "@/components/Contact";
 import MySelf from "@/components/MySelf";
+import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
 
 const Home = () => {
   return (
@@ -21,6 +23,8 @@ const Home = () => {
         ></path>
       </svg> */}
       <MySelf />
+      <Skills />
+      <Projects />
       <Contact />
     </main>
   );

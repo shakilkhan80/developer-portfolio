@@ -1,32 +1,30 @@
 "use client";
-import {
-    FormControl,
-    Grid,
-    InputLabel,
-    TextField,
-    TextareaAutosize,
-} from "@mui/material";
+import { Grid, TextareaAutosize } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
+import img from "../assets/map.png";
 const Contact = () => {
   const form = useForm();
 
   return (
     <section
       id="contact"
-      className="grid grid-cols-2 gap-4 justify-center items-center mx-20 my-20"
+      className="grid grid-cols-2 gap-8 justify-center items-center mx-20 my-20"
     >
-      <div>
-        <div>
-          <h1>Phone</h1>
-          <p>+880 1690 143 060</p>
+      <div
+        className="relative h-[60vh] place-items-start items-center bg-cover overflow-hidden px-3 py-1"
+        style={{ backgroundImage: `url(${img.src})` }}
+      >
+        <div className="mt-10">
+          <h1 className="text-sm font-semibold text-[#c49b66]">Phone :</h1>
+          <p className="mt-3 text-[#8f8f8f]">+880 1690 143 060</p>
+        </div>
+        <div className="my-5">
+          <h1 className="text-sm font-semibold text-[#c49b66]">Address :</h1>
+          <p className="mt-3 text-[#8f8f8f]">Dhaka, Bangladesh</p>
         </div>
         <div>
-          <h1>Address</h1>
-          <p>Dhaka, Bangladesh</p>
-        </div>
-        <div>
-          <h1>Email</h1>
-          <p>khanshakil.official@gmail.com</p>
+          <h1 className="text-sm font-semibold text-[#c49b66]">Email :</h1>
+          <p className="mt-3 text-[#8f8f8f]">khanshakil.official@gmail.com</p>
         </div>
       </div>
       <div>
@@ -36,74 +34,103 @@ const Contact = () => {
           })}
           className="space-y-5 mt-4"
         >
-          <Grid item xs={12} md={6}>
+          <div className="grid grid-cols-2 gap-4">
             <Controller
               control={form.control}
               name="name"
-              render={({ field }) => (
-                <FormControl fullWidth>
-                  <InputLabel id="selectLabelId">Name</InputLabel>
-                  <TextField
-                    InputLabelProps={{ shrink: true }}
-                    id="name"
-                    label="Name"
-                    type="text"
-                    fullWidth
-                  />
-                </FormControl>
+              render={() => (
+                <input
+                  {...form.register("name")}
+                  type="text"
+                  placeholder="Name"
+                  style={{
+                    width: "100%",
+
+                    borderRadius: "10px",
+                    padding: "15px",
+                    color: "#fff",
+                    backgroundColor: "#222",
+                  }}
+                />
               )}
             />
-          </Grid>
-          <Grid item xs={12} md={6}>
+
             <Controller
               control={form.control}
               name="email"
-              render={({ field }) => (
-                <FormControl fullWidth>
-                  <InputLabel id="selectLabelId">Email</InputLabel>
-                  <TextField
-                    InputLabelProps={{ shrink: true }}
-                    id="email"
-                    label="Email"
-                    type="text"
-                    fullWidth
-                  />
-                </FormControl>
+              render={() => (
+                <input
+                  {...form.register("email")}
+                  type="text"
+                  placeholder="Email"
+                  style={{
+                    width: "100%",
+                    borderRadius: "10px",
+                    padding: "15px",
+                    color: "#fff",
+                    backgroundColor: "#222",
+                  }}
+                />
               )}
             />
-          </Grid>
-          <Grid item xs={12} md={6}>
+
             <Controller
               control={form.control}
               name="subject"
-              render={({ field }) => (
-                <FormControl fullWidth>
-                  <InputLabel id="selectLabelId">Subject</InputLabel>
-                  <TextField
-                    InputLabelProps={{ shrink: true }}
-                    id="subject"
-                    label="Subject"
-                    type="text"
-                    fullWidth
-                  />
-                </FormControl>
+              render={() => (
+                <input
+                  {...form.register("subject")}
+                  type="text"
+                  placeholder="Subject"
+                  className="col-span-full"
+                  style={{
+                    width: "100%",
+                    borderRadius: "10px",
+                    padding: "15px",
+                    color: "#fff",
+                    backgroundColor: "#222",
+                  }}
+                />
               )}
             />
-          </Grid>
+          </div>
           <Grid item xs={12} md={6}>
             <TextareaAutosize
               aria-label="minimum height"
-              minRows={3}
+              minRows={5}
               placeholder="Write your opinion/suggestion"
               style={{
                 width: "100%",
-                border: "1px solid #ccc",
-                borderRadius: "5px",
-                padding: "12px",
+                borderRadius: "10px",
+                padding: "15px",
+                color: "#fff",
+                backgroundColor: "#222",
               }}
               {...form.register("message")}
             />
           </Grid>
+          <div className="flex justify-end">
+            <button
+              style={{
+                backgroundColor: "#c49b66",
+                border: "#c49b66",
+                color: "#fff",
+                padding: "10px 34px",
+                borderRadius: "30px",
+                position: "relative",
+                zIndex: "3",
+                cursor: "pointer",
+                marginLeft: "10px",
+                marginRight: "10px",
+                boxShadow: "0px 5px 5px",
+                float: "right",
+                overflow: "hidden",
+              }}
+              type="submit"
+            >
+              Send Message
+            </button>
+          </div>
         </form>
       </div>
     </section>
