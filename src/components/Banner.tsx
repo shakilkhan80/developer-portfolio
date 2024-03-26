@@ -45,7 +45,7 @@ const Banner = () => {
     >
       <div className="text-center mt-52">
         <h1 className="text-3xl md:text-7xl font-medium">Welcome!</h1>
-        <p className="text-xl md:text-4xl font-medium my-4">I am </p>
+        <p className="text-xl md:text-4xl font-medium mt-4 mb-2">I am </p>
         <div className="text-2xl md:text-6xl font-medium ">
           <AnimatePresence>
             <motion.div
@@ -61,8 +61,7 @@ const Banner = () => {
           </AnimatePresence>
         </div>
       </div>
-
-      <div className="flex gap-6 justify-center items-center mt-4 bg-white/5 rounded-lg px-2 py-1 w-2/3 md:w-1/5 mx-auto ">
+      <div className="absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-6 justify-center items-center mt-4 bg-white/5 rounded-lg px-2 py-1 w-2/3 md:w-1/5 mx-auto ">
         {icons.map((item, index) => (
           <div
             key={index}

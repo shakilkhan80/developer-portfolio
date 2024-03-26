@@ -63,7 +63,7 @@ const Skills = () => {
               <p
                 className={`p-11 bg-white/10 rounded-3xl  ${
                   hoveredItem === index
-                    ? "transition-transform duration-300  text-white bg-[#c39457] rotate-0"
+                    ? "transition-transform duration-300  text-white bg-[#bb8e55] rotate-0"
                     : "rotate-45 transition-transform duration-300 text-[#c49b66] bg-white/10"
                 } `}
               ></p>

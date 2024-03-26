@@ -1,16 +1,14 @@
 "use client";
 
-import { MenuBook } from "@mui/icons-material";
 import { AppBar, Button, Fab, Menu, MenuItem, styled } from "@mui/material";
 import Link from "next/link";
-import { useParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoMenu } from "react-icons/io5";
 
 const NavList = [
   {
     name: "Home",
-    link: "/",
+    link: "#home",
   },
   {
     name: "About",
@@ -41,6 +39,8 @@ const StyledFab = styled(Fab)({
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [activeSection, setActiveSection] = useState("");
+
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -48,8 +48,27 @@ const Navbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const pathName = useParams();
-  console.log(pathName);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section"); 
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+          setActiveSection(section.id);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  console.log(activeSection);
   return (
     <div>
       <AppBar sx={{ bgcolor: "#222", color: "#c49b66" }} position="fixed">
@@ -58,7 +77,14 @@ const Navbar = () => {
           <div className="hidden md:grid grid-cols-5 font-medium gap-2 items-center text-sm justify-center text-white">
             {NavList.map((item, index) => {
               return (
-                <div key={index} className="hover:text-[#c49b66]">
+                <div
+                  key={index}
+                  className={`${
+                    activeSection === item.name.toLocaleLowerCase()
+                      ? "text-[#c49b66]"
+                      : "text-white"
+                  } hover:text-[#c49b66]`}
+                >
                   <a href={item.link}>{item.name}</a>
                 </div>
               );
@@ -73,7 +99,7 @@ const Navbar = () => {
               aria-expanded={open ? "true" : undefined}
               onClick={handleClick}
             >
-              <IoMenu className="text-[#c49b66]" size={30}/>
+              <IoMenu className="text-[#c49b66]" size={30} />
             </Button>
             <Menu
               id="demo-positioned-menu"
