@@ -73,7 +73,7 @@ const Footer = () => {
                     <p
                       className={`p-6 bg-white/10 rounded-xl  ${
                         hoveredItem === index
-                          ? "transition-transform duration-300  text-white bg-[#b18955] rotate-0"
+                          ? "transition-transform duration-300  text-white bg-orange-300 rotate-0"
                           : "rotate-45 transition-transform duration-300 text-[#c49b66] bg-white/10"
                       } `}
                     ></p>

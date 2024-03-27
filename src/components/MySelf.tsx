@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import img from "../assets/profile.jpg";
+import Link from "next/link";
+import img from "../assets/slazzer-edit-image.png";
 
 const MySelf = () => {
   const downloadCV = () => {
@@ -67,7 +68,8 @@ const MySelf = () => {
           >
             Download CV
           </button>
-          <button
+          <Link
+            href={"mailto:khanshakil.official@gmail.com"}
             style={{
               backgroundColor: "#c49b66",
               border: "#c49b66",
@@ -85,7 +87,7 @@ const MySelf = () => {
             }}
           >
             Hire Me!
-          </button>
+          </Link>
         </div>
       </div>
     </section>
