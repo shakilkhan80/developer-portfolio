@@ -1,9 +1,15 @@
 "use client";
+import { useCreateAppointment } from "@/hooks";
 import { Grid, TextareaAutosize } from "@mui/material";
+import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
+import { toast } from "sonner";
 import img from "../assets/map.png";
 const Contact = () => {
+  const [submitting, setSubmitting] = useState(false);
   const form = useForm();
+
+  const appointmentMutation = useCreateAppointment();
 
   return (
     <section id="contact">
@@ -31,7 +37,28 @@ const Contact = () => {
         <div>
           <form
             onSubmit={form.handleSubmit((values) => {
-              console.log(values);
+              appointmentMutation.mutate(
+                {
+                  name: values.name,
+                  email: values.email,
+                  subject: values.subject,
+                  message: values.message,
+                },
+                {
+                  onSuccess: (val) => {
+                    setSubmitting(false);
+                    toast.success(val);
+                    form.reset();
+                  },
+                  onError: (e) => {
+                    setSubmitting(false);
+                    toast.error(
+                      e.message ||
+                        "Something Went Wrong! Please try again later"
+                    );
+                  },
+                }
+              );
             })}
             className="space-y-5 mt-4"
           >
@@ -112,6 +139,7 @@ const Contact = () => {
             </Grid>
             <div className="flex justify-center md:justify-end">
               <button
+                disabled={submitting}
                 style={{
                   backgroundColor: "#c49b66",
                   border: "#c49b66",

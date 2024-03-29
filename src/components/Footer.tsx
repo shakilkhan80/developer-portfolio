@@ -71,9 +71,9 @@ const Footer = () => {
                 <Link href={item.link} target="_blank">
                   <div className="relative">
                     <p
-                      className={`p-6 bg-white/10 rounded-xl  ${
+                      className={`p-6 rounded-xl  ${
                         hoveredItem === index
-                          ? "transition-transform duration-300  text-white bg-orange-300 rotate-0"
+                          ? "transition-transform duration-300  text-white bg-[#c49b66] rotate-0"
                           : "rotate-45 transition-transform duration-300 text-[#c49b66] bg-white/10"
                       } `}
                     ></p>

@@ -68,7 +68,7 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  console.log(activeSection);
+
   return (
     <div>
       <AppBar sx={{ bgcolor: "#222", color: "#c49b66" }} position="fixed">

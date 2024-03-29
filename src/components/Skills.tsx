@@ -61,9 +61,9 @@ const Skills = () => {
           >
             <div className="relative">
               <p
-                className={`p-11 bg-white/10 rounded-3xl  ${
+                className={`p-11 rounded-3xl  ${
                   hoveredItem === index
-                    ? "transition-transform duration-300  text-white bg-orange-300 rotate-0"
+                    ? "transition-transform duration-300 bg-[#c49b66] rotate-0"
                     : "rotate-45 transition-transform duration-300 text-[#c49b66] bg-white/10"
                 } `}
               ></p>
