@@ -27,7 +27,7 @@ const Contact = () => {
           </div>
           <div className="my-5">
             <h1 className="text-sm font-semibold text-[#c49b66]">Address :</h1>
-            <p className="mt-3 text-[#8f8f8f]">Dhaka, Bangladesh</p>
+            <p className="mt-3 text-[#8f8f8f]">Cumilla, Bangladesh</p>
           </div>
           <div>
             <h1 className="text-sm font-semibold text-[#c49b66]">Email :</h1>
