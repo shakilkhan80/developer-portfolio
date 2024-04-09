@@ -49,10 +49,9 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
-
   useEffect(() => {
     const handleScroll = () => {
-      const sections = document.querySelectorAll("section"); 
+      const sections = document.querySelectorAll("section");
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
         if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
@@ -74,7 +73,7 @@ const Navbar = () => {
       <AppBar sx={{ bgcolor: "#222", color: "#c49b66" }} position="fixed">
         <div className="flex justify-between items-center mx-3 md:mx-32 py-2">
           <div className="text-xl md:text-4xl font-bold text-white">Shakil</div>
-          <div className="hidden md:grid grid-cols-5 font-medium gap-2 items-center text-sm justify-center text-white">
+          <div className="hidden md:flex font-medium gap-5 items-center text-sm justify-center text-white">
             {NavList.map((item, index) => {
               return (
                 <div
